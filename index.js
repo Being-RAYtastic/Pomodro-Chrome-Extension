@@ -10,9 +10,10 @@ timeOverAudio.volume = 0
 
 let timerCount = 0
 let timerIsRunning = false
+const defaultTimerCount = 1500
 
 if (timerCount === 0) {
-    timerCount = 1500
+    timerCount = defaultTimerCount
     timerDisplay.textContent = formatTime(timerCount)
 }
 loadFocusTime()
@@ -108,12 +109,14 @@ settingsButton.addEventListener('click', () => {
 saveBtn.addEventListener('click', () => {
     const hoursInput = document.getElementById('hours').value || 0
     const minutesInput = document.getElementById('minutes').value || 0
-    const secondsInput = document.getElementById('seconds').value || 1500
+    const secondsInput = document.getElementById('seconds').value || 0
 
 
     const totalSeconds = (parseInt(hoursInput) * 3600) + (parseInt(minutesInput) * 60) + parseInt(secondsInput)
 
-    localStorage.setItem("focusTime", JSON.stringify(totalSeconds));
+    if (totalSeconds > 0) localStorage.setItem("focusTime", JSON.stringify(totalSeconds));
+    else if (totalSeconds === 0) localStorage.setItem("focusTime", JSON.stringify(defaultTimerCount));
+    
     loadFocusTime()
 
 })
