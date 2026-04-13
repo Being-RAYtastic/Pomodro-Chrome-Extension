@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- FOR ICONS ☝️ -->
+
+    <title>Timer App</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="timerDisplay">
+            <h3 id="timer">00:00</h3>
+        </div>
+        <div class="utilBtns">
+            <button id="actionTimerBtn" class="fa-solid fa-play">
+            </button>
+            <button id="resetTimerBtn">
+                <i class="fa-solid fa-rotate-left"></i>
+            </button>
+        </div>
+
+
+        <button id="settingsBtn">
+            <i class="fa-solid fa-gear"></i>
+        </button>
+
+        <div class="settingsMenuContainer">
+            <div id="settingsMenu" class="hidden">
+                <div class="focusSettings">
+                    <div class="desc">Focus Settings</div>
+                    <input type="number" id="hours" placeholder="HH" min="0" max="23" pad>
+                    <input type="number" id="minutes" placeholder="MM" min="0" max="59">
+                    <input type="number" id="seconds" placeholder="SS" min="0" max="59">
+                    <button id="saveBtn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+<script src="index.js"></script>
+
+</html>
