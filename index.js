@@ -4,8 +4,11 @@ const resetButton = document.getElementById('resetTimerBtn')
 const settingsButton = document.getElementById('settingsBtn')
 const saveBtn = document.getElementById('saveBtn')
 
+const timeOverAudio = document.getElementById("timeOver")
+timeOverAudio.volume = 0
 
-let timerCount = 1500 // 25mins in seconds
+
+let timerCount
 let timerIsRunning = false
 loadFocusTime()
 
@@ -47,6 +50,8 @@ function startTimer() {
             settingsButton.classList.remove('hidden')
 
             if (timerCount === 0) {
+                timeOverAudio.play()
+                
                 loadFocusTime()
                 settingsButton.classList.remove('hidden')
             }
@@ -113,6 +118,9 @@ function loadFocusTime() {
     const storedFocusTime = localStorage.getItem("focusTime");
     if (storedFocusTime && storedFocusTime !== "0") {
         timerCount = JSON.parse(storedFocusTime);
+        timerDisplay.textContent = formatTime(timerCount);
+    } else if (storedFocusTime === "0") {
+        timerCount = 1500;
         timerDisplay.textContent = formatTime(timerCount);
     }
 }
