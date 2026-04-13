@@ -108,7 +108,7 @@ settingsButton.addEventListener('click', () => {
 saveBtn.addEventListener('click', () => {
     const hoursInput = document.getElementById('hours').value || 0
     const minutesInput = document.getElementById('minutes').value || 0
-    const secondsInput = document.getElementById('seconds').value || 0
+    const secondsInput = document.getElementById('seconds').value || 1500
 
 
     const totalSeconds = (parseInt(hoursInput) * 3600) + (parseInt(minutesInput) * 60) + parseInt(secondsInput)
@@ -121,7 +121,7 @@ saveBtn.addEventListener('click', () => {
 // load focus time from localStorage on calling the function
 function loadFocusTime() {
     const storedFocusTime = localStorage.getItem("focusTime");
-    if (storedFocusTime && storedFocusTime !== "0") {
+    if (storedFocusTime) {
         timerCount = JSON.parse(storedFocusTime);
         timerDisplay.textContent = formatTime(timerCount);
     }
