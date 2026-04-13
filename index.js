@@ -8,8 +8,13 @@ const timeOverAudio = document.getElementById("timeOver")
 timeOverAudio.volume = 0
 
 
-let timerCount
+let timerCount = 0
 let timerIsRunning = false
+
+if (timerCount === 0) {
+    timerCount = 1500
+    timerDisplay.textContent = formatTime(timerCount)
+}
 loadFocusTime()
 
 // Function to format time in HH:MM:SS or MM:SS format
@@ -118,9 +123,6 @@ function loadFocusTime() {
     const storedFocusTime = localStorage.getItem("focusTime");
     if (storedFocusTime && storedFocusTime !== "0") {
         timerCount = JSON.parse(storedFocusTime);
-        timerDisplay.textContent = formatTime(timerCount);
-    } else if (storedFocusTime === "0") {
-        timerCount = 1500;
         timerDisplay.textContent = formatTime(timerCount);
     }
 }
