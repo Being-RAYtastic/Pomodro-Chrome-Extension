@@ -111,7 +111,7 @@ saveBtn.addEventListener('click', () => {
 // load focus time from localStorage on calling the function
 function loadFocusTime() {
     const storedFocusTime = localStorage.getItem("focusTime");
-    if (storedFocusTime) {
+    if (storedFocusTime && storedFocusTime !== "0") {
         timerCount = JSON.parse(storedFocusTime);
         timerDisplay.textContent = formatTime(timerCount);
     }
