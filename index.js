@@ -5,7 +5,7 @@ const settingsButton = document.getElementById('settingsBtn')
 const saveBtn = document.getElementById('saveBtn')
 
 
-// let timerCount = 10
+let timerCount = 1500 // 25mins in seconds
 let timerIsRunning = false
 loadFocusTime()
 
