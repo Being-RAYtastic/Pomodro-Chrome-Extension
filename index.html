@@ -34,12 +34,24 @@
 
         <div class="settingsMenuContainer">
             <div id="settingsMenu" class="hidden">
+                <div class="navbar">
+                    <button id="focusSettingsMenuBtn" class="active">focus</button>
+                    <button id="breakSettingsMenuBtn">break</button>
+                </div>
                 <div class="focusSettings">
                     <div class="desc">Focus Settings</div>
-                    <input type="number" id="hours" placeholder="HH" min="0" max="23" pad>
-                    <input type="number" id="minutes" placeholder="MM" min="0" max="59">
-                    <input type="number" id="seconds" placeholder="SS" min="0" max="59">
-                    <button id="saveBtn">Save</button>
+                    <input type="number" id="focusHours" placeholder="HH" min="0" max="23" pad>
+                    <input type="number" id="focusMinutes" placeholder="MM" min="0" max="59">
+                    <input type="number" id="focusSeconds" placeholder="SS" min="0" max="59">
+                    <button id="saveFocusBtn">Save</button>
+                </div>
+                
+                <div class="breakSettings hidden">
+                    <div class="desc">Break Settings</div>
+                    <input type="number" id="breakHours" placeholder="HH" min="0" max="23" pad>
+                    <input type="number" id="breakMinutes" placeholder="MM" min="0" max="59">
+                    <input type="number" id="breakSeconds" placeholder="SS" min="0" max="59">
+                    <button id="saveBreakBtn">Save</button>
                 </div>
             </div>
         </div>
